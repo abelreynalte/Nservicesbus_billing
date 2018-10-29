@@ -1,0 +1,13 @@
+﻿---
+applications:
+- name: billingendpoint
+  memory: 128M
+  path: bin\Debug\netcoreapp2.1\publish
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack.git
+  disk_quota: 2GB
+  instances: 1
+  no-route: true
+  stack: cflinuxfs2   
+  health-check-type: process
+  services:
+  - nservicesbus-rmq
